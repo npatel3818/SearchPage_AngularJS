@@ -1,0 +1,35 @@
+
+<header class="container">
+  <h1 style="text-align: center;background-color: #023E54;color: white;margin-top: 2%;line-height: 1%;border: none;font-size: 40px;">
+  <b>Search Page</b></h1>
+</header>
+
+<section class="artistpage">
+  <div class="search">
+    <input ng-model="query" placeholder="Search for Company" autofocus>  
+  </div>
+  <div id="heads">
+    <h2 id="head1">Company Name</h2>
+    <h2 id="head2">City Name</h2>
+  </div>
+
+  <div class="lists">
+    <ul class="artistlist" ng-show="query">
+      <li ng-animate="'animate'" class="artist cf" ng-repeat="item in listOfCustomers | filter:{'CompanyName':query} | orderBy: artistOrder:direction | limitTo : 7">          
+        <div class="info" style="width:50% ; margin: 10px 0px -25px; float: left">
+          <h2> {{item.CompanyName}}</h2>
+        </div>
+        <div class="info" style="width:50% ; margin: 0px 10px 22px 0px; float: right">
+          <h3>  {{item.City}}</h3>
+        </div>
+      </li>
+    </ul> 
+  </div> 
+</section>
+
+<footer style="margin-top:430px; position:relative;text-align: center;width: 100%;">
+    <div>
+      <h5 style="text-align:center;background-color: skyblue;margin: 0px">Copyright © Northwest Mutual Insurances </h5>
+    </div>
+</footer>
+
